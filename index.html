@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Khamis Nedal Al Jedi — Multimedia Developer & Creative Designer from Gaza, Palestine">
+<meta name="keywords" content="Khamis Al Jedi, خميس الجدي, Multimedia Developer, UI/UX Designer, Video Editor, Gaza, Palestine">
+<meta name="author" content="Khamis Nedal Al Jedi">
+<meta property="og:title" content="Khamis Nedal Al Jedi — Portfolio">
+<meta property="og:description" content="Multimedia Developer & Creative Designer from Gaza, Palestine">
+<meta property="og:image" content="images/profile.png">
+<title>Khamis Nedal Al Jedi — Portfolio</title>
+
+<!-- Favicon (logo) -->
+<link rel="icon" type="image/png" href="images/logo.png">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- CSS Files -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<!-- ── CUSTOM CURSOR ── -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ── SCROLL PROGRESS ── -->
+<div id="progress-bar"></div>
+
+<!-- ── PAGE TRANSITION OVERLAY ── -->
+<div id="page-overlay"></div>
+
+<!-- ── LOADER ── -->
+<div id="loader">
+  <div class="loader-logo">
+    <img src="images/logo.png" alt="KJ Logo" />
+  </div>
+  <div class="loader-name">Khamis Al Jedi</div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar-fill"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════ -->
+<nav id="navbar">
+  <!-- Logo -->
+  <a href="#hero" class="nav-logo" onclick="scrollToSection('hero');return false;">
+    <img src="images/logo.png" alt="KJ Logo" class="nav-logo-img" />
+    <span class="nav-logo-text">Khamis <span>Al Jedi</span></span>
+  </a>
+
+  <!-- Desktop Nav Links -->
+  <div class="nav-links" id="desktop-nav">
+    <!-- Rendered by JS -->
+  </div>
+
+  <!-- Language + Hamburger -->
+  <div style="display:flex;align-items:center;gap:12px;">
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ar" onclick="switchLang('ar')">AR</button>
+      <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MOBILE MENU ── -->
+<div id="mobile-menu">
+  <div id="mobile-nav"><!-- Rendered by JS --></div>
+  <div class="lang-switcher" style="margin-top:24px;">
+    <button class="lang-btn active" data-lang="ar" onclick="switchLang('ar')">AR</button>
+    <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg-decor"></div>
+  <div class="hero-grid-bg"></div>
+  <div class="noise-overlay"></div>
+  <div class="hero-inner" id="hero-content">
+    <!-- Rendered by JS -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid" id="about-content">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SKILLS
+══════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="section-inner">
+    <div id="skills-header"></div>
+    <div class="skills-grid stagger-children" id="skills-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PROJECTS
+══════════════════════════════════════════════ -->
+<section id="projects">
+  <div class="section-inner">
+    <div id="projects-header"></div>
+    <div class="projects-filters stagger-children" id="projects-filters">
+      <!-- Rendered by JS -->
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     EXPERIENCE
+══════════════════════════════════════════════ -->
+<section id="experience">
+  <div class="section-inner">
+    <div id="exp-header"></div>
+    <div class="exp-timeline" id="exp-timeline">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     EDUCATION
+══════════════════════════════════════════════ -->
+<section id="education" style="background:var(--white)">
+  <div class="section-inner">
+    <div id="edu-header"></div>
+    <div id="edu-content">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CERTIFICATES
+══════════════════════════════════════════════ -->
+<section id="certificates">
+  <div class="section-inner">
+    <div id="certs-header"></div>
+    <div class="certs-grid" id="certs-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════ -->
+<section id="contact" style="background:var(--white)">
+  <div class="section-inner">
+    <div id="contact-header"></div>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left" id="contact-info">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="contact-form reveal-right" id="contact-form-inner">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner" id="footer-content">
+    <!-- Rendered by JS -->
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+     ADMIN PANEL TOGGLE
+══════════════════════════════════════════════ -->
+<button id="admin-toggle" onclick="toggleAdmin()" title="إضافة مشروع جديد" aria-label="Admin Panel">
+  ➕
+</button>
+
+<!-- Admin Overlay -->
+<div id="admin-overlay" onclick="closeAdmin()"></div>
+
+<!-- Admin Panel -->
+<div id="admin-panel">
+  <div class="admin-header">
+    <div>
+      <div class="admin-header-title">🛠 لوحة الإدارة</div>
+      <div class="admin-header-sub">أضف أو احذف مشاريعك بسهولة</div>
+    </div>
+    <button class="admin-close" onclick="closeAdmin()">✕</button>
+  </div>
+  <div class="admin-body">
+
+    <div class="admin-notice">
+      💡 المشاريع المضافة هنا تُحفظ في المتصفح وتظهر فوراً في الموقع.
+      لإضافتها بشكل دائم، انسخ الكود الناتج إلى <strong>js/main.js</strong>.
+    </div>
+
+    <!-- ADD PROJECT FORM -->
+    <div class="admin-section">
+      <div class="admin-section-title">إضافة مشروع جديد</div>
+
+      <div class="admin-field">
+        <label class="admin-label">اسم المشروع (عربي)</label>
+        <input class="admin-input" id="ap-name-ar" placeholder="مثال: موقع شركتي" />
+      </div>
+      <div class="admin-field">
+        <label class="admin-label">Project Name (English)</label>
+        <input class="admin-input" id="ap-name-en" placeholder="e.g. My Company Website" dir="ltr"/>
+      </div>
+      <div class="admin-field">
+        <label class="admin-label">الوصف (عربي)</label>
+        <textarea class="admin-textarea" id="ap-desc-ar" placeholder="وصف مختصر للمشروع..."></textarea>
+      </div>
+      <div class="admin-field">
+        <label class="admin-label">Description (English)</label>
+        <textarea class="admin-textarea" id="ap-desc-en" placeholder="Brief project description..." dir="ltr"></textarea>
+      </div>
+      <div class="admin-field">
+        <label class="admin-label">رابط المشروع</label>
+        <input class="admin-input" id="ap-url" placeholder="https://yourusername.github.io/project/" dir="ltr"/>
+      </div>
+      <div class="admin-field">
+        <label class="admin-label">التقنيات (مفصولة بفاصلة)</label>
+        <input class="admin-input" id="ap-tech" placeholder="HTML, CSS, JavaScript" dir="ltr"/>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="admin-field">
+          <label class="admin-label">النوع (عربي)</label>
+          <select class="admin-select" id="ap-type-ar">
+            <option>Portfolio</option>
+            <option>E-Commerce</option>
+            <option>Healthcare</option>
+            <option>App</option>
+            <option>Corporate</option>
+            <option>Digital</option>
+            <option>Education</option>
+          </select>
+        </div>
+        <div class="admin-field">
+          <label class="admin-label">الإيموجي</label>
+          <input class="admin-input" id="ap-emoji" placeholder="🌐" style="font-size:20px;text-align:center;" maxlength="2"/>
+        </div>
+      </div>
+
+      <div class="admin-field">
+        <label class="admin-label">اللون</label>
+        <div class="admin-color-row" id="ap-colors">
+          <div class="admin-color-swatch selected" data-color="blue"   style="background:#dbeafe;" onclick="selectColor('blue',this)"></div>
+          <div class="admin-color-swatch" data-color="teal"   style="background:#ccfbf1;" onclick="selectColor('teal',this)"></div>
+          <div class="admin-color-swatch" data-color="amber"  style="background:#fef3c7;" onclick="selectColor('amber',this)"></div>
+          <div class="admin-color-swatch" data-color="rose"   style="background:#fce7f3;" onclick="selectColor('rose',this)"></div>
+          <div class="admin-color-swatch" data-color="purple" style="background:#ede9fe;" onclick="selectColor('purple',this)"></div>
+          <div class="admin-color-swatch" data-color="green"  style="background:#d1fae5;" onclick="selectColor('green',this)"></div>
+        </div>
+      </div>
+
+      <div class="admin-field">
+        <label class="admin-label">التقييم</label>
+        <div class="admin-stars-row" id="ap-stars">
+          <button class="admin-star-btn lit" data-v="1" onclick="setStars(1)">★</button>
+          <button class="admin-star-btn lit" data-v="2" onclick="setStars(2)">★</button>
+          <button class="admin-star-btn lit" data-v="3" onclick="setStars(3)">★</button>
+          <button class="admin-star-btn lit" data-v="4" onclick="setStars(4)">★</button>
+          <button class="admin-star-btn"     data-v="5" onclick="setStars(5)">★</button>
+        </div>
+      </div>
+
+      <button class="admin-add-btn" id="admin-add-btn" onclick="adminAddProject()">
+        ➕ إضافة المشروع للموقع
+      </button>
+    </div>
+
+    <!-- PROJECTS LIST -->
+    <div class="admin-section">
+      <div class="admin-section-title">المشاريع الحالية</div>
+      <div class="admin-projects-list" id="admin-projects-list">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- EXPORT CODE -->
+    <div class="admin-section">
+      <div class="admin-section-title">تصدير الكود</div>
+      <p style="font-size:12px;color:var(--ink3);margin-bottom:10px;line-height:1.7;">
+        انسخ هذا الكود وضعه في <code style="background:var(--sand);padding:2px 6px;border-radius:4px;">js/main.js</code> داخل مصفوفة <code style="background:var(--sand);padding:2px 6px;border-radius:4px;">PROJECTS_DATA</code>
+      </p>
+      <textarea class="admin-textarea" id="admin-export-code" readonly dir="ltr" style="font-family:var(--font-mono);font-size:11px;min-height:120px;background:var(--ink);color:#3fb950;border-color:var(--ink);" placeholder="// ستظهر هنا بعد إضافة مشاريع جديدة"></textarea>
+      <button class="admin-add-btn" style="margin-top:8px;background:var(--teal);" onclick="copyExportCode()">
+        📋 نسخ الكود
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Email Toast -->
+<div id="email-toast">
+  <span id="email-toast-icon">📧</span>
+  <span id="email-toast-msg">جاري الإرسال...</span>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     JAVASCRIPT FILES
+══════════════════════════════════════════════ -->
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+</html>
